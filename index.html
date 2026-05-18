@@ -40,6 +40,8 @@ max-width:400px;
 margin:30px auto;
 border-radius:15px;
 transition:1s ease;
+position:relative;
+z-index:1;
 }
 
 #status{
@@ -70,12 +72,12 @@ font-weight:bold;
 
 <script>
 function previewImage(){
-const file=document.getElementById("upload").files[0];
-const preview=document.getElementById("preview");
+const file = document.getElementById("upload").files[0];
+const preview = document.getElementById("preview");
 
 if(file){
-preview.src=URL.createObjectURL(file);
-preview.style.display="block";
+preview.src = URL.createObjectURL(file);
+preview.style.display = "block";
 }
 }
 
