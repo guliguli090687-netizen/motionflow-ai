@@ -88,9 +88,12 @@ const status = document.getElementById("status");
 const preview = document.getElementById("preview");
 
 if(!file){
-status.innerHTML = "Upload image dulu!";
+status.innerHTML = "Upload gambar dulu!";
 return;
 }
+
+preview.src = URL.createObjectURL(file);
+preview.style.display = "block";
 
 status.innerHTML = "Connecting to Gemini AI...";
 
@@ -104,12 +107,11 @@ status.innerHTML = "Sending prompt to Gemini...";
 
 setTimeout(()=>{
 status.innerHTML = "Generating AI motion...";
-preview.style.transform = "translateY(-20px)";
-preview.style.transition = "1s ease";
+preview.style.transform = "translateY(-20px) scale(1.05)";
 },6000);
 
 setTimeout(()=>{
-preview.style.transform = "translateY(0px)";
+preview.style.transform = "translateY(0px) scale(1)";
 status.innerHTML = "Gemini Motion Complete!";
 },8000);
 
