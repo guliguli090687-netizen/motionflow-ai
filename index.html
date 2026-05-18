@@ -70,12 +70,20 @@ preview.style.display="block";
 }
 
 function generateMotion(){
-document.getElementById("status").innerHTML =
-"Generating AI Fashion Motion...";
+    const status = document.getElementById("status");
 
-setTimeout(()=>{
-document.getElementById("status").innerHTML =
-"AI Motion Render Complete!";
-},3000);
+    status.innerHTML = "Analyzing fashion structure...";
+
+    setTimeout(()=>{
+        status.innerHTML = "Generating motion frames...";
+    },2000);
+
+    setTimeout(()=>{
+        status.innerHTML = "Applying AI render effects...";
+    },4000);
+
+    setTimeout(()=>{
+        status.innerHTML = "AI Motion Render Complete!";
+    },6000);
+
 }
-</script>
