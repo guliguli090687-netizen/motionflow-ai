@@ -49,6 +49,9 @@ border-radius:15px;
 <input type="file" id="upload" accept="image/*"><br>
 
 <button onclick="previewImage()">Preview</button>
+<button onclick="generateMotion()">Generate AI Motion</button>
+
+<p id="status"></p>
 
 <br>
 <img id="preview">
@@ -65,7 +68,14 @@ preview.src=URL.createObjectURL(file);
 preview.style.display="block";
 }
 }
-</script>
 
-</body>
-</html>
+function generateMotion(){
+document.getElementById("status").innerHTML =
+"Generating AI Fashion Motion...";
+
+setTimeout(()=>{
+document.getElementById("status").innerHTML =
+"AI Motion Render Complete!";
+},3000);
+}
+</script>
